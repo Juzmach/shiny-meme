@@ -1,1 +1,9 @@
 <h2>Home</h2>
+
+<ul>
+	<% @urls.each do |url| %>
+		<li>
+			<%= url[:url] %>
+		</li>	
+	<% end %>
+<ul>

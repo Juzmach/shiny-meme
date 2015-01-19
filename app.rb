@@ -9,7 +9,7 @@ class Shinymeme < Sinatra::Application
 		DB.create_table :urls do
 			primary_key :id
 			String :shortened
-			String :url
+			String :original
 		end
 	end
 
@@ -23,12 +23,16 @@ class Shinymeme < Sinatra::Application
 	end
 
 	post '/shorten' do
-		DB[:urls].insert(shortened: shorten_url, url: params[:url])
+		DB[:urls].insert(shortened: shorten_url, original: params[:url])
 		redirect '/'
 	end
 
 	def shorten_url
-		shortened_url = "http://shinyme.me/"
+		adjective1 = "Overly"
+		adjective2 = "Positive"
+		subject = "Corgi"
+		shinyme_url = "http://shinyme.me/"
+		shortened_url = shinyme_url + adjective1 + adjective2 + subject
 
 		shortened_url
 	end

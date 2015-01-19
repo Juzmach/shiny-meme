@@ -1,5 +1,13 @@
-<h2>Home</h2>
+<div class="lead">
+	<a href="/shorten"><button type="button" class="btn btn-primary btn-lg">Shorten URL</button></a>
+</div>
 
-<a href="/shorten"><button type="button" class="btn btn-primary btn-lg">Shorten URL</button></a>
-
-
+<div>
+	<ul class="list-group">
+		<% @urls.each do |url| %>
+			<li class="list-group-item">
+				<a href="<% url[:original] %>"><%= url[:shortened] %></a>
+			</li>
+		<% end %>
+	</ul>
+</div>

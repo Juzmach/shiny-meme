@@ -1,9 +1,8 @@
-<h2>Home</h2>
+<div class="row">
+	<h2>Home</h2>
+</div>
 
-<ul>
-	<% @urls.each do |url| %>
-		<li>
-			<%= url[:url] %>
-		</li>	
-	<% end %>
-<ul>
+<div class="row">
+	<a href="/shorten"><button type="button" class="btn btn-primary btn-lg">Shorten URL</button></a>
+</div>
+

@@ -2,10 +2,10 @@ require 'sinatra'
 
 class Shinymeme < Sinatra::Application
 	get '/' do
-		"hello world!"
+		erb :index
 	end
 
 	get '/shorten' do
-		"shortened url!"
+		erb :shorten
 	end
 end
